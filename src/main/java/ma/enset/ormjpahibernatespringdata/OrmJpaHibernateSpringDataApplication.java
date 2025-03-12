@@ -1,6 +1,5 @@
 package ma.enset.ormjpahibernatespringdata;
 
-import ma.enset.ormjpahibernatespringdata.dao.PatientRepository;
 import ma.enset.ormjpahibernatespringdata.entities.Patient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
