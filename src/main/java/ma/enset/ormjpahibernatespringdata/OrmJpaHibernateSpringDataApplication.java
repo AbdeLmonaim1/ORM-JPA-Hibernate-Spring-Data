@@ -23,8 +23,7 @@ public class OrmJpaHibernateSpringDataApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrmJpaHibernateSpringDataApplication.class, args);
     }
-    @Bean
-
+    //@Bean
 	CommandLineRunner start(PatientRepository patientRepository, MedecinRepository medecinRepository, RendezVousRepository rendezVousRepository, ConsultationRepository consultationRepository) {
       return args -> {
 		  Stream.of("Hassan", "Ali", "Sofia").forEach(name ->{
@@ -33,6 +32,7 @@ public class OrmJpaHibernateSpringDataApplication {
 			  patient.setAge((int)(Math.random()*10));
 			  patient.setDateOfBirth(new Date());
 			  patient.setSick(Math.random()>0.5?true:false);
+			  patient.setScore((int)(Math.random()*10));
 			  patientRepository.save(patient);
 		  });
 
@@ -52,7 +52,7 @@ public class OrmJpaHibernateSpringDataApplication {
 		  rendezVous.setMedecin(medecin);
 		  rendezVous.setPatient(patient);
 		  rendezVousRepository.save(rendezVous);
-		  RendezVous rendezbyID = rendezVousRepository.findById(1L).get();
+		  RendezVous rendezbyID = rendezVousRepository.findById(2L).get();
 		  Consultation consultation = new Consultation();
 		  consultation.setConsultationDate(new Date());
 		  consultation.setRapport("Rapport de la consultation ....");
