@@ -91,3 +91,26 @@ public enum StatusRDV {
     DONE
 }
 ```
+### Dao Layer:
+#### PatientRepository:
+```java
+public interface PatientRepository extends JpaRepository<Patient, Long> {
+   Patient findByName(String name);
+}
+```
+#### MedecinRepository:
+```java
+public interface MedecinRepository extends JpaRepository<Medecin, Long> {
+    Medecin findByName(String name);
+}
+```
+#### ConsultationRepository:
+```java
+public interface ConsultationRepository extends JpaRepository<Consultation, Long> {
+}
+```
+#### RendezVousRepository:
+```java
+public interface RendezVousRepository extends JpaRepository<RendezVous, Long> {
+}
+```
